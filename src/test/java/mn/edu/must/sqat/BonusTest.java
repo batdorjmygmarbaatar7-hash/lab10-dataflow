@@ -83,4 +83,12 @@ class BonusTest {
     void longerThanFiveStreak() {
         assertEquals(8, DataFlowTargets.bonus(new int[] {1, 1, 1, 1, 1, 1, 1}, 3));
     }
+
+    // ---------- Part C: M2 killer ----------
+
+    @Test
+    @DisplayName("K1 bonus([1,0,1,1,1,1],10)=0: best must be max STREAK (4), not present count (5) - kills M2")
+    void m2KillShortRunThenLongerRun() {
+        assertEquals(0, DataFlowTargets.bonus(new int[] {1, 0, 1, 1, 1, 1}, 10));
+    }
 }
